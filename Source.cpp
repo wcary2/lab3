@@ -9,7 +9,8 @@ bool sumLong();
 bool factorialTestDouble();
 bool strangeBehavior();
 bool strangeBehaviorDouble();
-
+bool puzzle();
+bool puzzleDouble();
 
 int main() {
 	string option = "";
@@ -33,6 +34,13 @@ int main() {
 		}
 		if (option == "strangedouble") {
 			bool overflowStrangeDouble = strangeBehaviorDouble();
+		}
+		if (option == "puzzle") {
+			bool puzzlebool = puzzle();
+		}
+
+		if (option == "puzzledouble") {
+			bool puzzledoublebool = puzzleDouble();
 		}
 	}
 	return 0;
@@ -115,10 +123,10 @@ bool strangeBehavior() {
 	cout << "Enter value of n: ";
 	cin >> n;
 	float testNumber = 1;
-	for (double i = 1.0; i <= n; i++) {
+	for (float i = 1.0; i <= n; i++) {
 		testNumber += (1 / n) - 1.0;
 	}
-	cout << "value of ratio is: " << testNumber << endl;
+	cout << "value of the ratio is: " << testNumber << endl;
 	return 0;
 }
 
@@ -126,10 +134,26 @@ bool strangeBehaviorDouble() {
 	double n;
 	cout << "Enter value of n: ";
 	cin >> n;
-	double testNumber = 1;
+	double testNumber = 0;
 	for (double i = 1.0; i <= n; i++) {
-		testNumber += (1 / n) - (1.0);
+		testNumber += (1.0 / n);
 	}
-	cout << "value of ratio is: " << testNumber << endl;
+	cout << "value of the ratio is: " << testNumber << endl;
+	return true;
+}
+
+bool puzzle() {
+	for (float i = 3.4; i < 4.4; i += 0.2)
+	{
+		cout << "i = " << i << endl;
+	}
+	return true;
+}
+
+bool puzzleDouble() {
+	for (double i = 3.4; i < 4.4; i += 0.2)
+	{
+		cout << "i = " << i << endl;
+	}
 	return true;
 }
