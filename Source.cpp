@@ -135,7 +135,7 @@ bool strangeBehavior() {
 		sum += ratio;
 	}
 	cout << "value of the ratio is: " << ratio << endl;
-	cout << "the sum of the " << n << " times is: " << sum << endl;
+	cout << "the sum of the ratio " << n << " times is: " << sum << endl;
 	return 0;
 }
 
@@ -149,7 +149,7 @@ bool strangeBehaviorDouble() {
 		sum += ratio;
 	}
 	cout << "value of the ratio is: " << ratio << endl;
-	cout << "the sum of the " << n << " times is: " << sum << endl;
+	cout << "the sum of the ratio" << n << " times is: " << sum << endl;
 	return true;
 }
 

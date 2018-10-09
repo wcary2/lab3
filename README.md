@@ -36,18 +36,18 @@ lab3
 	
 
 6. The sum of the ratio of the float test is not as completely precise as adding the ratio n times should always result in 1,
-	but when n gets large the sum of the ratio demonstrates a lack of precision by remaining less than the expected value
+	but when n gets large enough the sum of the ratio becomes either greater than or less than the expected value
 	for instance:
 		Enter value of n: 1000
 		value of the ratio is: 0.001
-		the sum of the 1000 times is: 0.999991
+		the sum of the ratio 1000 times is: 0.999991
 	--> expected = 1
 		
 7.	The double version of the previous function results in much more precision as it always results in 1
 	for instance: 
 		Enter value of n: 8888885
 		value of the ratio is: 1.125e-07
-		the sum of the 8.88889e+06 times is: 1
+		the sum of the ratio 8.88889e+06 times is: 1
 	--> expected = 1
 	
 8.	The numerical error occurs during the last iteration of the for loop when the loop should have recognized that i was
