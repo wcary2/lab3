@@ -15,7 +15,10 @@ bool puzzleDouble();
 int main() {
 	string option = "";
 	while (option != "close") {
-		cout << "Enter the name of the function you wish to call: ";
+		cout << endl << "sumshort" << endl << "sumlong" << endl << "factorial" << endl
+			<< "factorialdouble" << endl << "strange" << endl << "strangedouble" << endl
+			<< "puzzle" << endl << "puzzledouble" << endl
+			<< "Enter the command you wish to call: ";
 		cin >> option;
 		if (option == "sumshort") {
 			bool overflowShort = sumShort();
@@ -27,7 +30,7 @@ int main() {
 			bool overflowFactorial = factorialTest();
 		}
 		if (option == "factorialdouble") {
-			bool overflowFactorial = factorialTest();
+			bool overflowFactorial = factorialTestDouble();
 		}
 		if (option == "strange") {
 			bool overflowStrange = strangeBehavior();
@@ -56,6 +59,7 @@ bool sumShort() {
 			cout << endl;
 			cout << "An overflow was detected: the operation was stopped." << endl;
 			cout << "last value of sumShort: " << sumShort << endl;
+			cout << "last value of n before overflow: " << i - 1 << endl << endl;
 			cout << "Value of n that caused overflow: " << i << endl << endl;
 			return false;
 		}
@@ -73,12 +77,13 @@ bool sumLong() {
 		if (sumLong > 0 && i > 0 && sumLong + i < 0) {
 			cout << endl << "An overflow was detected: the operation was stopped" << endl;
 			cout << "last value of sumLong: " << sumLong << endl;
+			cout << "last value of n before overflow: " << i - 1 << endl << endl;
 			cout << "Value of n that caused overflow: " << i << endl << endl;
 			return false;
 		}
 		sumLong += i;
 	}
-	cout << "sumShort = " << sumLong << endl;
+	cout << endl <<"sumShort = " << sumLong << endl;
 	return true;
 }
 
@@ -91,6 +96,7 @@ bool factorialTest() {
 		if (testNumber * i == INFINITY) {
 			cout << endl <<"An overflow was detectedL the operation was stopped" << endl;
 			cout << "last value of the factorial was: " << testNumber << endl;
+			cout << "last value of n before overflow: " << i - 1 << endl;
 			cout << "value of n that caused the overflow: " << i << endl << endl;
 			return false;
 		}
@@ -109,6 +115,7 @@ bool factorialTestDouble() {
 		if (testNumber * i == INFINITY) {
 			cout << endl << "An overflow was detectedL the operation was stopped" << endl;
 			cout << "last value of the factorial was: " << testNumber << endl;
+			cout << "last value of n before overflow: " << i - 1 << endl << endl;
 			cout << "value of n that caused the overflow: " << i << endl << endl;
 			return false;
 		}
@@ -122,11 +129,13 @@ bool strangeBehavior() {
 	double n;
 	cout << "Enter value of n: ";
 	cin >> n;
-	float testNumber = 1;
+	float ratio = 1.0 / n;
+	float sum = 0;
 	for (float i = 1.0; i <= n; i++) {
-		testNumber += (1 / n) - 1.0;
+		sum += ratio;
 	}
-	cout << "value of the ratio is: " << testNumber << endl;
+	cout << "value of the ratio is: " << ratio << endl;
+	cout << "the sum of the ratio " << n << " times is: " << sum << endl;
 	return 0;
 }
 
@@ -134,11 +143,13 @@ bool strangeBehaviorDouble() {
 	double n;
 	cout << "Enter value of n: ";
 	cin >> n;
-	double testNumber = 0;
+	double ratio = (1.0/ n);
+	double sum = 0;
 	for (double i = 1.0; i <= n; i++) {
-		testNumber += (1.0 / n);
+		sum += ratio;
 	}
-	cout << "value of the ratio is: " << testNumber << endl;
+	cout << "value of the ratio is: " << ratio << endl;
+	cout << "the sum of the ratio" << n << " times is: " << sum << endl;
 	return true;
 }
 
