@@ -53,4 +53,4 @@ lab3
 8.	The numerical error occurs during the last iteration of the for loop when the loop should have recognized that i was
 	equal to 4.4 and stopped, but instead continued through the for loop.
 	
-9. The numerical error does not occure demonstrating that the double is more precise and accurate than floats
+9. The numerical error does not occur demonstrating that the double is more precise and accurate than floats
